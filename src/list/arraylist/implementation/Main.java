@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-		//ArrayList.javaÆÄÀÏÀÇ class¸¦ ÀÎ½ºÅÏ½ºÈ­ ½ÃÅ´
+		//ArrayList.javaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ classï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½È­ ï¿½ï¿½Å´
 		ArrayList numbers = new ArrayList();
 		
 		numbers.addLast(10);
@@ -49,9 +49,14 @@ public class Main {
 			if (number == 30) {
 				li.add(35);
 			}
+			
+			if (number == 15) {
+				li.remove();
+			}
 		}
 		
 		System.out.println("numbers : " + numbers);
+		
 	}
 	
 }

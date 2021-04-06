@@ -7,14 +7,14 @@ public class ArrayList {
 	private int size = 0;
 	private Object[] elementData = new Object[100];
 	
-	//1. µ¥ÀÌÅÍ Ãß°¡
-	//1-1. Ã¹¹øÂ° À§Ä¡¿¡ µ¥ÀÌÅÍ Ãß°¡
+	//1. ë°ì´í„° ì¶”ê°€
+	//1-1. ì²«ë²ˆì§¸ ìœ„ì¹˜ì— ë°ì´í„° ì¶”ê°€
 	public boolean addFirst(Object element) {
 		
 		return add(0, element);
 	}
 	
-	//1-2. ¸¶Áö¸· À§Ä¡¿¡ µ¥ÀÌÅÍ Ãß°¡
+	//1-2. ë§ˆì§€ë§‰ ìœ„ì¹˜ì— ë°ì´í„° ì¶”ê°€
 	public boolean addLast(Object element) {
 		
 		elementData[size] = element;
@@ -23,7 +23,7 @@ public class ArrayList {
 		return true;
 	}
 
-	//1-3. ¿øÇÏ´Â À§Ä¡¿¡ µ¥ÀÌÅÍ Ãß°¡
+	//1-3. ì›í•˜ëŠ” ìœ„ì¹˜ì— ë°ì´í„° ì¶”ê°€
 	public boolean add(int index, Object element) {
 		
 		for (int i=size-1; i>=index; i--) {
@@ -44,7 +44,7 @@ public class ArrayList {
 		for(int i=0; i < size; i++) {
 			str += elementData[i];
 			
-			if(i < size-1) {	//¸¶Áö¸·¿¡´Â ,¸¦ ³ÖÁö¸»ÀÚ
+			if(i < size-1) {	//ë§ˆì§€ë§‰ì—ëŠ” ,ë¥¼ ë„£ì§€ë§ìž
 				str += ",";				
 			}
 		}
@@ -53,8 +53,8 @@ public class ArrayList {
 	}
 	
 	
-	//2. µ¥ÀÌÅÍ »èÁ¦
-	//2-1. ¿øÇÏ´Â À§Ä¡ÀÇ µ¥ÀÌÅÍ »èÁ¦
+	//2. ë°ì´í„° ì‚­ì œ
+	//2-1. ì›í•˜ëŠ” ìœ„ì¹˜ì˜ ë°ì´í„° ì‚­ì œ
 	public Object remove(int index) {
 		
 		Object removed = elementData[index];
@@ -65,34 +65,34 @@ public class ArrayList {
 		
 		size--;
 		
-		//¸¶Áö¸· À§Ä¡ÀÇ ¿¤¸®¸ÕÆ®¸¦ ¸í½ÃÀûÀ¸·Î »èÁ¦
+		//ë§ˆì§€ë§‰ ìœ„ì¹˜ì˜ ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ëª…ì‹œì ìœ¼ë¡œ ì‚­ì œ
 		elementData[size] = null;
 		
 		return removed;
 	}
 	
 	
-	//2-2. Ã¹¹øÂ° µ¥ÀÌÅÍ »èÁ¦
+	//2-2. ì²«ë²ˆì§¸ ë°ì´í„° ì‚­ì œ
 	public Object removeFirst() {
 		
 		return remove(0);
 	}
 	
 
-	//2-3. ¸¶Áö¸· µ¥ÀÌÅÍ »èÁ¦
+	//2-3. ë§ˆì§€ë§‰ ë°ì´í„° ì‚­ì œ
 	public Object removeLast() {
 		
 		return remove(size-1);
 	}
 	
 	
-	//3. Æ¯Á¤ ¿¤¸®¸ÕÆ®ÀÇ °ª °¡Á®¿À±â
+	//3. íŠ¹ì • ì—˜ë¦¬ë¨¼íŠ¸ì˜ ê°’ ê°€ì ¸ì˜¤ê¸°
 	public Object get(int index) {
 		return elementData[index];
 	}
 	
 	
-	//4. ¿¤¸®¸ÕÆ®ÀÇ Å©±â °¡Á®¿À±â
+	//4. ì—˜ë¦¬ë¨¼íŠ¸ì˜ í¬ê¸° ê°€ì ¸ì˜¤ê¸°
 	public int size() {
 		
 		return size;
@@ -100,10 +100,10 @@ public class ArrayList {
 	
 
 	/**
-	 * 5. µ¥ÀÌÅÍ Å½»ö
-	 * 	- Æ¯Á¤ÇÑ °ªÀ» °¡Áø ¿¤¸®¸ÕÆ®ÀÇ ÀÎµ¦½º °ªÀ» ¾Ë¾Æ³»´Â ¹æ¹ý
+	 * 5. ë°ì´í„° íƒìƒ‰
+	 * 	- íŠ¹ì •í•œ ê°’ì„ ê°€ì§„ ì—˜ë¦¬ë¨¼íŠ¸ì˜ ì¸ë±ìŠ¤ ê°’ì„ ì•Œì•„ë‚´ëŠ” ë°©ë²•
 	 * @param o
-	 * @return ÇØ´ç °ªÀÌ ÀÖ´Ù¸é ±× °ªÀÌ ¹ß°ßµÇ´Â Ã¹¹øÂ° ÀÎµ¦½º°ª, ¾ø´Ù¸é -1À» return
+	 * @return í•´ë‹¹ ê°’ì´ ìžˆë‹¤ë©´ ê·¸ ê°’ì´ ë°œê²¬ë˜ëŠ” ì²«ë²ˆì§¸ ì¸ë±ìŠ¤ê°’, ì—†ë‹¤ë©´ -1ì„ return
 	 */
 	public Object indexOf(Object o) {
 		
@@ -122,6 +122,7 @@ public class ArrayList {
 	
 	
 	public ListIterator listIterator() {
+		//ListIterator ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„±í•´ì„œ ë¦¬í„´í•œë‹¤.
 		return new ListIterator();
 	}
 	
@@ -131,40 +132,55 @@ public class ArrayList {
 		private int nextIndex = 0;
 
 		/**
-		 * ´ÙÀ½ ¿¤¸®¸ÕÆ®ÀÇ Á¸Àç ¿©ºÎ¸¦ ¹ÝÈ¯ÇÏ´Â ¸Þ¼Òµå
-		 * @return Á¸ÀçÇÏ¸é 1, ¾ÈÇÏ¸é 0
+		 * ë‹¤ìŒ ì—˜ë¦¬ë¨¼íŠ¸ì˜ ì¡´ìž¬ ì—¬ë¶€ë¥¼ ë°˜í™˜í•˜ëŠ” ë©”ì†Œë“œ
+		 * @return ì¡´ìž¬í•˜ë©´ 1, ì•ˆí•˜ë©´ 0
 		 */
 		public boolean hasNext() {
 			return nextIndex < size;
 		}
 		
 		/**
-		 * ´ÙÀ½ ¿¤¸®¸ÕÆ®¸¦ Ã£´Â ¸Þ¼Òµå
-		 * @return 
+		 * ë‹¤ìŒ ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì°¾ëŠ” ë©”ì†Œë“œ
+		 * @return nextIndexì— í•´ë‹¹í•˜ëŠ” ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 		 */
 		public Object next() {
+			//í•´ë‹¹ ì—˜ë¦¬ë¨¼íŠ¸ ë¦¬í„´ í›„ nextIndexì˜ ê°’ì„ 1 ì¦ê°€
 			return elementData[nextIndex++];
 		}
 		
 		
 		/**
-		 * ÀÌÀüÀÇ ¿¤¸®¸ÕÆ®¸¦ Ã£´Â ¸Þ¼Òµå
-		 * @return
+		 * ì´ì „ì˜ ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì°¾ëŠ” ë©”ì†Œë“œ
+		 * @return previousIndexì— í•´ë‹¹í•˜ëŠ” ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ë°˜í™˜í•œë‹¤.
 		 */
 		public Object previous() {
+			//í•´ë‹¹ ì—˜ë¦¬ë¨¼íŠ¸ ë¦¬í„´ í›„ nextIndexì˜ ê°’ì„ 1 ê°ì†Œ
 			return elementData[--nextIndex];
 		}
 
 		/**
-		 * ÀÌÀü ¿¤¸®¸ÕÆ®ÀÇ Á¸Àç ¿©ºÎ¸¦ ¹ÝÈ¯ÇÏ´Â ¸Þ¼Òµå
-		 * @return
+		 * ì´ì „ ì—˜ë¦¬ë¨¼íŠ¸ì˜ ì¡´ìž¬ ì—¬ë¶€ë¥¼ ë°˜í™˜í•˜ëŠ” ë©”ì†Œë“œ
+		 * @return 1ì´ë©´ ì´ì „ ì—˜ë¦¬ë¨¼íŠ¸ ì¡´ìž¬, 0ì´ë©´ ì¡´ìž¬í•˜ì§€ ì•ŠìŒ
 		 */
 		public boolean hasPrevious() {
 			return nextIndex > 0;
 		}
 
+		/**
+		 * í˜„ìž¬ ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì¶”ê°€í•œë‹¤.
+		 * @param element
+		 */
 		public void add(Object element) {
 			ArrayList.this.add(nextIndex++, element);	
+		}
+		
+		
+		/**
+		 * í˜„ìž¬ ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì‚­ì œí•œë‹¤.
+		 */
+		public void remove() {
+			ArrayList.this.remove(nextIndex-1);
+			nextIndex--;
 		}
 
 	}
